@@ -98,7 +98,8 @@
                                 <textarea class="form-control" name="message" id="message" rows="1" placeholder="Message"></textarea>
                             </div>
                             <div class="form-group col-lg-12">
-                                <button type="submit" value="submit" class="btn submit_btn form-control">Send</button>
+                                <button type="submit" value="submit" class="btn submit_btn form-control" onClick="return sendInfo(this)" >Send</button>
+                                <!--<input type="submit" value="Send Message"  class="btn submit_btn form-control" onClick="return sendInfo(this)" /> -->
                             </div>
                         </form>
                     </div>
@@ -245,5 +246,50 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         
         <script src="js/circle-active.js"></script>
         <script src="js/theme.js"></script>
+
+        <script>
+            function sendInfo(obj){
+        
+              if($("#name").val() == '' ){
+                   alert('Please enter your Name.');
+                   $("#name").focus()
+                   return false;
+                   }
+                 if($("#email").val() == '' ){
+                   alert('Please enter a valid email.');
+                 $("#email").focus()
+                   return false;
+                   }
+                 if($("#subject").val() == '' ){
+                   alert('Please enter subject.');
+                   $("#subject").focus()
+                   return false;
+                 }
+        
+            $(obj).attr('disabled',true);
+            $(obj).attr('value','Please wait ...');
+            var map={}
+            map["name"]=$("#name").val();
+            map["emailid"]=$("#email").val();
+            map["subject"]=$("#subject").val();
+            map["message"]=$("#message").val();
+            $.ajax({
+             type: 'POST',
+             data: JSON.stringify(map),
+             url: "https://3slraard19.execute-api.ap-south-1.amazonaws.com/dev/snedNotifn",
+             success: function (response) {
+            alert("Thanks you, for Contact us, Your response is important to us, We will get back you soon.");
+            location.reload();
+            },
+             error : function (response) {
+            alert("Error while submitting response, Please contact admin")
+            location.reload();
+            }
+            
+            });
+            return false;
+            }
+            </script>
+
     </body>
 </html>
