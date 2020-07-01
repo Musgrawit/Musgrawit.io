@@ -569,7 +569,7 @@ i:before {
 }
 
 .feature_item {
-  text-align: center;
+  text-align: left;
   padding: 40px 0px 60px 0px;
   -webkit-transition: all 400ms linear 0s;
   -o-transition: all 400ms linear 0s;
@@ -1376,7 +1376,7 @@ i:before {
   font-size: 13px;
   font-family: "Open Sans", sans-serif;
   font-style: italic;
-  color: #a5bbd0;
+  color: #fdfdfd;
 }
 
 .contact_us_form .form-group input.placeholder {
