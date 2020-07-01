@@ -264,9 +264,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                  $("#email").focus()
                    return false;
                    }
-                 if($("#mobile").val() == '' ){
+                 if($("#Phone").val() == '' ){
                    alert('Please enter 10 digit Phone/Mobile Number.');
-                   $("#mobile").focus()
+                   $("#Phone").focus()
                    return false;
                  }
         
@@ -275,12 +275,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             var map={}
             map["name"]=$("#name").val();
             map["emailid"]=$("#email").val();
-            map["mobile"]=$("#mobile").val();
+            map["Phone"]=$("#Phone").val();
             map["message"]=$("#message").val();
             $.ajax({
              type: 'POST',
              data: JSON.stringify(map),
-             url: "https://3slraard19.execute-api.ap-south-1.amazonaws.com/dev/snedNotifn",
+             url: "https://5vvnjl5hii.execute-api.ap-south-1.amazonaws.com/dev/MU/sendEmail",
              success: function (response) {
             alert("Thanks you, for Contact us, Your response is important to us, We will get back you soon.");
             location.reload();
