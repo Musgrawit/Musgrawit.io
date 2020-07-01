@@ -86,13 +86,13 @@
                     <div class="col-lg-6">
                         <form class="contact_us_form row" action="" method="post" id="contactForm" novalidate="novalidate">
                             <div class="form-group col-lg-6">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Name*">
                             </div>
                             <div class="form-group col-lg-6">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email*">
                             </div>
                             <div class="form-group col-lg-12">
-                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject*">
+                                <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile No*">
                             </div>
                             <div class="form-group col-lg-12">
                                 <textarea class="form-control" name="message" id="message" rows="1" placeholder="Message"></textarea>
@@ -121,7 +121,7 @@
         </section>
         <!--================End Get in Touch Area =================-->
         
-        
+
         <!--================Map Area =================-->
         <section class="world_map_area p_100">
             <div class="container">
@@ -261,9 +261,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                  $("#email").focus()
                    return false;
                    }
-                 if($("#subject").val() == '' ){
-                   alert('Please enter subject.');
-                   $("#subject").focus()
+                 if($("#mobile").val() == '' ){
+                   alert('Please enter 10 digit Phone/Mobile Number.');
+                   $("#mobile").focus()
                    return false;
                  }
         
@@ -272,7 +272,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             var map={}
             map["name"]=$("#name").val();
             map["emailid"]=$("#email").val();
-            map["subject"]=$("#subject").val();
+            map["mobile"]=$("#mobile").val();
             map["message"]=$("#message").val();
             $.ajax({
              type: 'POST',

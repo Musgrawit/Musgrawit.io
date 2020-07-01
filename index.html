@@ -479,7 +479,7 @@
                                 <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                             </div>
                             <div class="form-group col-lg-12">
-                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject*">
+                                <input type="text" class="form-control" id="mobile" name="mobile" placeholder="mobile*">
                             </div>
                             <div class="form-group col-lg-12">
                                 <textarea class="form-control" name="message" id="message" rows="1" placeholder="Message"></textarea>
@@ -603,9 +603,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                  $("#email").focus()
                    return false;
                    }
-                 if($("#subject").val() == '' ){
-                   alert('Please enter subject.');
-                   $("#subject").focus()
+                 if($("#mobile").val() == '' ){
+                   alert('Please enter 10 digit Phone/Mobile Number.');
+                   $("#mobile").focus()
                    return false;
                  }
         
@@ -614,7 +614,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             var map={}
             map["name"]=$("#name").val();
             map["emailid"]=$("#email").val();
-            map["subject"]=$("#subject").val();
+            map["mobile"]=$("#mobile").val();
             map["message"]=$("#message").val();
             $.ajax({
              type: 'POST',
