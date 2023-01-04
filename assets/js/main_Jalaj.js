@@ -225,7 +225,7 @@ map["message"]=$("#message").val();
 $.ajax({
  type: 'POST',
  data: JSON.stringify(map),
- url: "https://5vvnjl5hii.execute-api.ap-south-1.amazonaws.com/dev/MU/sendEmail",
+ url: "https://a8ok76592i.execute-api.ap-south-1.amazonaws.com/dev/MU/sendEmail",
  
  success: function (response) {
 alert("Thanks you, for Contact us, Your response is important to us, We will get back you soon.");
